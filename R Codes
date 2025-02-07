@@ -1,1 +1,134 @@
+R Code for Data Preprocessing
+# Load necessary libraries
+library(dplyr)
+library(lubridate)
+
+# Load the dataset
+df <- read.csv("Online_Retail_Cleaned.csv", stringsAsFactors = FALSE)
+
+# Remove missing values
+df <- df %>% filter(!is.na(CustomerID))
+
+# Remove returns (negative quantities)
+df <- df %>% filter(Quantity > 0)
+
+# Create Total Price column
+df$TotalPrice <- df$Quantity * df$UnitPrice
+
+# Convert InvoiceDate to Date type
+df$InvoiceDate <- as.Date(df$InvoiceDate, format="%m/%d/%Y %H:%M")
+
+# Extract year, month, day
+df$Year <- year(df$InvoiceDate)
+df$Month <- month(df$InvoiceDate)
+df$Day <- day(df$InvoiceDate)
+
+# Filter data for UK customers only
+df <- df %>% filter(Country == "United Kingdom")
+
+# Display the first few rows
+head(df)
+
+Visualization 1: Monthly Sales Trends
+
+library(ggplot2)
+
+# Aggregate sales by month
+monthly_sales <- df %>%
+  group_by(Year, Month) %>%
+  summarise(TotalSales = sum(TotalPrice))
+
+# Plot
+ggplot(monthly_sales, aes(x = factor(Month), y = TotalSales, fill = factor(Year))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Monthly Sales Trends", x = "Month", y = "Total Sales") +
+  theme_minimal()
+
+Visualization 2: Top 10 Best-Selling Products
+
+# Aggregate sales by product
+top_products <- df %>%
+  group_by(Description) %>%
+  summarise(TotalSales = sum(TotalPrice)) %>%
+  arrange(desc(TotalSales)) %>%
+  head(10)
+
+# Plot
+ggplot(top_products, aes(x = reorder(Description, TotalSales), y = TotalSales)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(title = "Top 10 Best-Selling Products", x = "Product", y = "Total Sales") +
+  theme_minimal()
+
+Visualization 3: Customer Spending Distribution
+
+# Aggregate spending by customer
+customer_spending <- df %>%
+  group_by(CustomerID) %>%
+  summarise(TotalSpending = sum(TotalPrice))
+
+# Plot histogram
+ggplot(customer_spending, aes(x = TotalSpending)) +
+  geom_histogram(bins = 50, fill = "blue", alpha = 0.7) +
+  labs(title = "Customer Spending Distribution", x = "Total Spending", y = "Number of Customers") +
+  theme_minimal()
+
+R Code for Customer Segmentation
+
+library(cluster)
+
+# Calculate RFM values
+rfm_data <- df %>%
+  group_by(CustomerID) %>%
+  summarise(Recency = as.numeric(Sys.Date() - max(InvoiceDate)),
+            Frequency = n_distinct(InvoiceNo),
+            Monetary = sum(TotalPrice))
+
+# Normalize data
+rfm_scaled <- scale(rfm_data[,-1])
+
+# Determine optimal number of clusters
+wss <- sapply(1:10, function(k) kmeans(rfm_scaled, centers=k, nstart=10)$tot.withinss)
+plot(1:10, wss, type="b", pch=19, col="red", main="Elbow Method for Optimal K")
+
+# Apply K-Means with 4 clusters
+set.seed(42)
+kmeans_model <- kmeans(rfm_scaled, centers=4, nstart=10)
+
+# Add cluster labels to the dataset
+rfm_data$Cluster <- factor(kmeans_model$cluster)
+
+# Visualize Clusters
+ggplot(rfm_data, aes(x = Frequency, y = Monetary, color = Cluster)) +
+  geom_point(alpha = 0.7) +
+  labs(title = "Customer Segmentation Based on RFM", x = "Frequency", y = "Monetary Value") +
+  theme_minimal()
+
+R Code for Time Series Forecasting
+
+library(prophet)
+
+# Aggregate daily sales
+daily_sales <- df %>%
+  group_by(InvoiceDate) %>%
+  summarise(TotalSales = sum(TotalPrice))
+
+# Rename columns for Prophet
+colnames(daily_sales) <- c("ds", "y")
+
+# Fit the Prophet model
+m <- prophet(daily_sales)
+
+# Create future dataframe for predictions
+future <- make_future_dataframe(m, periods = 90)
+
+# Predict future sales
+forecast <- predict(m, future)
+
+# Plot forecast
+plot(m, forecast) +
+  labs(title = "Sales Forecast for Next 3 Months")
+
+
+
 
