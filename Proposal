@@ -1,1 +1,24 @@
-
+Project Proposal:
+ Dynamic Customer Segmentation for Predictive Stock Replenishment
+Group Members (The AI Inventory Avengers)
+•	Anderson
+•	Jack
+•	Wayne
+•	Zemen
+Project Focus Area
+The project will focus on the e-commerce industry, specifically on improving inventory management through AI-driven customer segmentation and predictive stock replenishment.
+Research Question / Challenge
+How can dynamic customer segmentation be leveraged to improve predictive stock replenishment and optimize inventory management in e-commerce?
+Brief Description of the Data
+The dataset to be used is the Online Retail Business Cleaned Dataset, which consists of transactional records from a UK-based online retailer (2010-2011). Key variables include:
+•	CustomerID: Unique customer identifier
+•	Invoice No & InvoiceDate: Transaction details
+•	Stock Code & Description: Product details
+•	Quantity & Unit Price: Purchase information
+•	Country: Customer location
+The project will apply unsupervised machine learning (K-Means clustering) for customer segmentation and time series forecasting (Prophet) for demand prediction to help businesses improve stock management.
+Expected Impact
+By using AI-driven insights, businesses can:
+✔ Reduce overstocking and minimize lost sales
+✔ Improve customer satisfaction through better inventory planning
+✔ Enable data-driven, dynamic stock replenishment strategies
