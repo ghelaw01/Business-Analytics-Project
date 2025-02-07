@@ -1,1 +1,3 @@
+Abstract:
 
+In the rapidly evolving landscape of e-commerce, understanding customer behavior is pivotal for optimizing inventory management. This study introduces a dynamic customer segmentation model that predicts future inventory needs based on purchasing behaviors, trends, and seasonality. Utilizing the Online Retail Business Cleaned Dataset, we employ unsupervised learning techniques to segment customers and implement time series forecasting to anticipate product demand. The findings aim to provide actionable insights for businesses to enhance stock replenishment strategies and improve overall operational efficiency.
