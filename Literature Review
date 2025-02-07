@@ -1,1 +1,19 @@
+2. Literature Review
 
+The literature on inventory management and customer segmentation provides a foundation for understanding the interplay between customer behaviors and stock replenishment strategies.
+
+2.1 Inventory Management Strategies
+
+Traditional inventory management strategies, such as Economic Order Quantity (EOQ) and Just-In-Time (JIT), focus on minimizing costs associated with ordering and holding inventory. While effective in stable environments, these methods may not adequately address the variability inherent in customer demand patterns. Recent studies have highlighted the importance of incorporating demand forecasting into inventory management to enhance responsiveness and reduce stockouts.
+
+2.2 Customer Segmentation Approaches
+
+Customer segmentation involves dividing a customer base into distinct groups based on specific characteristics. The Recency, Frequency, Monetary (RFM) model is a widely used approach that segments customers based on their purchasing recency, frequency, and monetary value. However, the RFM model is static and may not capture the evolving nature of customer behaviors. Advancements in machine learning have introduced dynamic segmentation techniques that utilize clustering algorithms to identify patterns in customer data, allowing for more adaptive marketing and inventory strategies.
+
+2.3 Integrating Customer Segmentation with Inventory Management
+
+Integrating customer segmentation with inventory management enables businesses to tailor their stock replenishment strategies to the needs of specific customer groups. For instance, understanding that a particular segment exhibits seasonal purchasing behavior can inform proactive stock adjustments ahead of peak demand periods. Studies have demonstrated that such integration can lead to improved inventory turnover rates and reduced holding costs.
+
+2.4 Gaps in Existing Research
+
+While existing research underscores the benefits of combining customer segmentation with inventory management, there is a paucity of studies that employ dynamic segmentation models to predict future demand. This study seeks to fill this gap by developing a model that not only segments customers based on their purchasing behaviors but also forecasts future product demand for each segment, thereby informing more effective stock replenishment strategies.
