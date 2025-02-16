@@ -1,79 +1,72 @@
-Project Proposal:
- Dynamic Customer Segmentation for Predictive Stock Replenishment
-Group Members (The AI Inventory Avengers)
+Project Proposal
+Title:
+Evaluating the Impact of Socioeconomic Factors on Student Academic Performance: A Statistical and Predictive Analysis Using the “Students Performance in Exams” Dataset
+Group Members (The AI Avengers)
 •	Anderson
 •	Jack
 •	Wayne
 •	Zemen
-Project Proposal
-Title:
-Evaluating the Impact of Socioeconomic Factors on Student Academic Performance: A Statistical and Predictive Analysis Using the “Students Performance in Exams” Dataset
 
+
+________________________________________
 1. Project Focus Area
 This project focuses on the relationship between socioeconomic factors and student academic performance. The goal is to explore how parental education, financial status (proxied by lunch type), and test preparation influence students’ math, reading, and writing scores. The study will leverage statistical methods, clustering techniques, regression modeling, and predictive analysis to determine key predictors of academic achievement.
-
+________________________________________
 2. Brief Description of the Data
 The study will utilize the "Students Performance in Exams" dataset, which is publicly available on Kaggle. This dataset contains 1,000 student records with the following key variables:
-
-Numerical Variables
-
-Math Score (0–100)
-Reading Score (0–100)
-Writing Score (0–100)
-Categorical Variables
-
-Gender (Male/Female)
-Race/Ethnicity (Grouped categories)
-Parental Level of Education (Various levels of formal education)
-Lunch Type (Standard / Free or Reduced)
-Test Preparation Course (Completed / Not Completed)
+•	Numerical Variables
+o	Math Score (0–100)
+o	Reading Score (0–100)
+o	Writing Score (0–100)
+•	Categorical Variables
+o	Gender (Male/Female)
+o	Race/Ethnicity (Grouped categories)
+o	Parental Level of Education (Various levels of formal education)
+o	Lunch Type (Standard / Free or Reduced)
+o	Test Preparation Course (Completed / Not Completed)
 The dataset provides a robust basis for analyzing how socioeconomic and demographic factors affect student performance across multiple subjects.
-
+________________________________________
 3. Methods the Project Will Apply
 This project will employ a range of statistical techniques, machine learning algorithms, and exploratory data analysis methods to derive insights from the dataset. The key methods include:
-
 A. Data Cleaning & Preprocessing
-Handling missing values and outliers.
-Encoding categorical variables for analysis.
-Normalizing or standardizing numerical variables if required.
+•	Handling missing values and outliers.
+•	Encoding categorical variables for analysis.
+•	Normalizing or standardizing numerical variables if required.
 B. Exploratory Data Analysis (EDA)
-Descriptive statistics (mean, median, standard deviation) for key variables.
-Visualizations:
-Histograms & Box Plots (Distribution of scores).
-Scatter Plots (Relationships between scores and predictors).
-Correlation Heatmaps (Understanding variable relationships).
+•	Descriptive statistics (mean, median, standard deviation) for key variables.
+•	Visualizations:
+o	Histograms & Box Plots (Distribution of scores).
+o	Scatter Plots (Relationships between scores and predictors).
+o	Correlation Heatmaps (Understanding variable relationships).
 C. Statistical Analysis
-T-Test: To compare student performance based on test preparation course completion.
-ANOVA (Analysis of Variance): To assess score differences across parental education levels.
-Shapiro-Wilk Test: To check for normality in the score distributions.
+•	T-Test: To compare student performance based on test preparation course completion.
+•	ANOVA (Analysis of Variance): To assess score differences across parental education levels.
+•	Shapiro-Wilk Test: To check for normality in the score distributions.
 D. Clustering Analysis
-K-Means Clustering: To identify student performance groups.
-Hierarchical Clustering: To analyze natural student groupings based on performance metrics.
+•	K-Means Clustering: To identify student performance groups.
+•	Hierarchical Clustering: To analyze natural student groupings based on performance metrics.
 E. Regression & Predictive Modeling
-Simple Linear Regression: To study the effect of parental education on student performance.
-Multiple Linear Regression: To model the influence of multiple factors (parental education, lunch type, test preparation) on academic scores.
-Regression Tree Model: To categorize student performance levels based on independent variables.
+•	Simple Linear Regression: To study the effect of parental education on student performance.
+•	Multiple Linear Regression: To model the influence of multiple factors (parental education, lunch type, test preparation) on academic scores.
+•	Regression Tree Model: To categorize student performance levels based on independent variables.
 F. Residual & Diagnostic Analysis
-QQ Plots: To check normality of residuals.
-Residual vs. Fitted Plots: To test model assumptions.
-Predicted vs. Actual Scores: To evaluate regression performance.
+•	QQ Plots: To check normality of residuals.
+•	Residual vs. Fitted Plots: To test model assumptions.
+•	Predicted vs. Actual Scores: To evaluate regression performance.
+________________________________________
 4. Expected Impact
 This project will provide insights into how socioeconomic factors influence student success, contributing to both academic research and education policy formulation. The expected outcomes include:
-
-Identifying Key Predictors:
-
-Understanding which socioeconomic variables (e.g., parental education, financial status, test preparation) significantly impact academic performance.
-Enhancing Educational Policies:
-
-Providing data-driven recommendations for educational policymakers to support students from disadvantaged backgrounds.
-Suggesting targeted interventions (e.g., tutoring programs, free test preparation courses) to bridge the performance gap.
-Improving Predictive Models for Student Success:
-
-Developing statistical models that predict student performance based on socioeconomic factors.
-These models could be adapted for school-level decision-making, helping educators identify at-risk students early.
-Encouraging Further Research & Data-Driven Approaches in Education:
-
-The methodology can be replicated across different education systems, providing a framework for analyzing student performance on a larger scale.
+1.	Identifying Key Predictors:
+o	Understanding which socioeconomic variables (e.g., parental education, financial status, test preparation) significantly impact academic performance.
+2.	Enhancing Educational Policies:
+o	Providing data-driven recommendations for educational policymakers to support students from disadvantaged backgrounds.
+o	Suggesting targeted interventions (e.g., tutoring programs, free test preparation courses) to bridge the performance gap.
+3.	Improving Predictive Models for Student Success:
+o	Developing statistical models that predict student performance based on socioeconomic factors.
+o	These models could be adapted for school-level decision-making, helping educators identify at-risk students early.
+4.	Encouraging Further Research & Data-Driven Approaches in Education:
+o	The methodology can be replicated across different education systems, providing a framework for analyzing student performance on a larger scale.
+________________________________________
 Final Remarks
 This project will combine statistical rigor, machine learning techniques, and education-focused insights to deepen our understanding of how socioeconomic factors shape academic success. The findings could drive policy innovations that help reduce education inequality and promote academic excellence for all students.
 
