@@ -1,1 +1,52 @@
+This study employs a quantitative research design, utilizing the "Students Performance in Exams" dataset from Kaggle. The dataset comprises 1,000 instances of student information, encompassing demographic, socioeconomic, and academic attributes. Key variables pertinent to this analysis include:
+
+Numerical Variables:
+
+Math score
+Reading score
+Writing score
+Parental level of education (encoded numerically)
+Test preparation course completion (encoded as 0 for no and 1 for yes)
+Categorical Variables:
+
+Gender
+Race/ethnicity
+Lunch type (standard or free/reduced)
+Data Cleaning:
+
+The initial phase involved data cleaning to ensure accuracy and consistency. Missing values were addressed through mean imputation for numerical variables and mode imputation for categorical variables. Outliers were detected using the interquartile range method and were examined contextually to determine their legitimacy. Erroneous entries were corrected or removed as necessary.
+
+Exploratory Data Analysis (EDA):
+
+EDA was conducted to understand the distribution and relationships of variables. Descriptive statistics provided insights into central tendencies and dispersions. Visualizations, including histograms and box plots, depicted the distribution of scores, while scatter plots illustrated potential correlations between parental education, test preparation, and academic performance.
+
+Clustering Analysis:
+
+To identify patterns within the data, both k-means and hierarchical clustering analyses were performed.
+
+K-Means Clustering: This partitioning method grouped students based on similarities across numerical variables. The optimal number of clusters was determined using the elbow method, which involved plotting the within-cluster sum of squares against the number of clusters and identifying the point where the rate of decrease sharply slows.
+
+Hierarchical Clustering: This approach built a dendrogram to represent the nested grouping of students based on their attributes. Agglomerative clustering with Ward's linkage method was employed to ensure that clusters were meaningfully distinct and interpretable. The clustering results provided insights into different student profiles based on academic performance and socioeconomic factors.
+
+Statistical Analysis:
+
+Several statistical tests were conducted to evaluate the relationships between key variables:To assess the relationships between socioeconomic factors and academic performance, various statistical tests were conducted:
+
+ANOVA (Analysis of Variance): Used to compare mean exam scores across different parental education levels.
+T-Test: Applied to determine whether there is a significant difference in scores between students who completed the test preparation course and those who did not.
+Shapiro-Wilk Test: Conducted to assess the normality of the score distributions.
+Pearson and Spearman Correlation Tests: Used to examine relationships between parental education, test preparation, and academic performance.
+Regression Analysis
+Regression techniques were applied to quantify the effects of socioeconomic factors on student performance.
+
+Simple Linear Regression: Modeled the relationship between parental education and academic performance.
+Multiple Linear Regression: Considered multiple predictors (parental education, lunch type, and test preparation course) to explain variations in academic scores.
+Regression Tree: A decision tree approach was employed to predict student scores based on multiple independent variables.
+Residual Analysis & Visualizations
+To validate the regression models, residual diagnostics were performed:
+
+Scatter Plot: Illustrated the relationship between key numerical variables.
+QQ Plot: Examined the normality of residuals.
+Residual Plot: Assessed homoscedasticity (constant variance).
+Fitted Graph: Visualized predicted versus actual scores.
 
