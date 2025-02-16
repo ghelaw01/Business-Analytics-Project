@@ -1,19 +1,13 @@
-2. Literature Review
+The relationship between socioeconomic status and academic performance has been extensively studied across various educational contexts. Coleman et al. (1966) conducted a seminal study revealing that family background significantly influences student achievement, often outweighing the effects of school resources. This finding has been corroborated by subsequent research emphasizing the critical role of SES in shaping educational outcomes.
 
-The literature on inventory management and customer segmentation provides a foundation for understanding the interplay between customer behaviors and stock replenishment strategies.
+Sirin (2005) performed a meta-analytic review quantifying the relationship between SES and academic performance, demonstrating a medium to strong correlation. Similarly, White (1982) found that parental education and occupation are significant predictors of student achievement, highlighting the multifaceted nature of SES influences.
 
-2.1 Inventory Management Strategies
+Bradley and Corwyn (2002) highlighted that higher SES families often provide enriched learning environments, characterized by access to educational materials, extracurricular activities, and stimulating interactions, all of which foster cognitive development. Moreover, high-SES parents are more likely to engage in practices that promote academic success, such as reading to their children and setting high educational expectations (Davis-Kean, 2005).
 
-Traditional inventory management strategies, such as Economic Order Quantity (EOQ) and Just-In-Time (JIT), focus on minimizing costs associated with ordering and holding inventory. While effective in stable environments, these methods may not adequately address the variability inherent in customer demand patterns. Recent studies have highlighted the importance of incorporating demand forecasting into inventory management to enhance responsiveness and reduce stockouts.
+School-related factors also mediate the relationship between SES and student performance. Lareau (2011) observed that children from higher SES backgrounds benefit from concerted cultivation, wherein parents actively organize and participate in their children's educational experiences, leading to advantages in school settings. Conversely, students from lower SES backgrounds may face challenges such as limited access to quality schools, experienced teachers, and advanced coursework (Reardon, 2011).
 
-2.2 Customer Segmentation Approaches
+The psychological dimension is another critical facet. Eccles et al. (1993) posited that SES influences children's academic self-concept and motivation, with higher SES students exhibiting greater confidence in their academic abilities. This self-assuredness often translates into higher academic aspirations and resilience in the face of challenges.
 
-Customer segmentation involves dividing a customer base into distinct groups based on specific characteristics. The Recency, Frequency, Monetary (RFM) model is a widely used approach that segments customers based on their purchasing recency, frequency, and monetary value. However, the RFM model is static and may not capture the evolving nature of customer behaviors. Advancements in machine learning have introduced dynamic segmentation techniques that utilize clustering algorithms to identify patterns in customer data, allowing for more adaptive marketing and inventory strategies.
+Despite the robust evidence linking SES to academic performance, some studies suggest that the relationship is not deterministic. Rothstein (2004) argued that while SES provides certain advantages, school interventions and policies can mitigate its impact. For instance, programs targeting early childhood education and parental involvement have shown promise in bridging the achievement gap associated with socioeconomic disparities (Heckman, 2006).
 
-2.3 Integrating Customer Segmentation with Inventory Management
-
-Integrating customer segmentation with inventory management enables businesses to tailor their stock replenishment strategies to the needs of specific customer groups. For instance, understanding that a particular segment exhibits seasonal purchasing behavior can inform proactive stock adjustments ahead of peak demand periods. Studies have demonstrated that such integration can lead to improved inventory turnover rates and reduced holding costs.
-
-2.4 Gaps in Existing Research
-
-While existing research underscores the benefits of combining customer segmentation with inventory management, there is a paucity of studies that employ dynamic segmentation models to predict future demand. This study seeks to fill this gap by developing a model that not only segments customers based on their purchasing behaviors but also forecasts future product demand for each segment, thereby informing more effective stock replenishment strategies.
+In summary, the literature underscores a significant association between socioeconomic factors and student academic performance. The influence of SES manifests through various channels, including home environment, parental involvement, school quality, and psychological factors. However, the extent of this impact and the potential for mitigating strategies warrant further exploration, particularly in diverse educational contexts.
