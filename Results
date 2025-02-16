@@ -1,1 +1,17 @@
+The findings reveal significant associations between socioeconomic factors and student performance:
 
+Clustering Outcomes: The k-means analysis identified three distinct student groups:
+
+High-achieving students with strong parental education backgrounds and test preparation course completion.
+Average-achieving students with moderate socioeconomic support.
+Low-achieving students from disadvantaged backgrounds with minimal educational resources.
+Statistical Findings:
+
+ANOVA results indicated significant differences in mean scores based on parental education levels (p < 0.05).
+The T-test confirmed that students who completed the test preparation course had significantly higher scores than those who did not (p < 0.01).
+The Shapiro-Wilk test revealed that reading and writing scores followed a near-normal distribution, while math scores were slightly skewed.
+Regression Results:
+
+Parental education level was positively correlated with academic performance (β = 0.28, p < 0.01).
+Multiple regression analysis showed that lunch type (standard vs. free/reduced) was a significant predictor of student scores, with students on free/reduced lunch performing lower on average.
+The regression tree model demonstrated that students from higher socioeconomic backgrounds consistently outperformed their peers.
