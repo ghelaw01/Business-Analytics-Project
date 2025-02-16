@@ -17,6 +17,198 @@ students <- read.csv("StudentsPerformance.csv")
 # View first few rows
 head(students)
 
+# Data Cleaning
+# Check for missing values
+sum(is.na(students))
+
+# Convert categorical variables to factors
+students$gender <- as.factor(students$gender)
+students$race.ethnicity <- as.factor(students$race.ethnicity)
+students$parental.level.of.education <- as.factor(students$parental.level.of.education)
+students$lunch <- as.factor(students$lunch)
+students$test.preparation.course <- as.factor(students$test.preparation.course)
+
+# Rename columns for easier access
+colnames(students) <- c("Gender", "Race", "ParentalEd", "Lunch", "TestPrep", "MathScore", "ReadingScore", "WritingScore")
+
+# Encode categorical variables numerically for analysis
+students$ParentalEd <- as.numeric(as.factor(students$ParentalEd))
+students$Lunch <- as.numeric(as.factor(students$Lunch))
+students$TestPrep <- as.numeric(as.factor(students$TestPrep))
+
+# Exploratory Data Analysis (EDA)
+
+
+# Summary statistics
+summary(students)
+
+# Distribution of scores
+ggplot(students, aes(x=MathScore)) + geom_histogram(binwidth=5, fill="blue", alpha=0.7) + labs(title="Math Score Distribution")
+ggplot(students, aes(x=ReadingScore)) + geom_histogram(binwidth=5, fill="red", alpha=0.7) + labs(title="Reading Score Distribution")
+ggplot(students, aes(x=WritingScore)) + geom_histogram(binwidth=5, fill="green", alpha=0.7) + labs(title="Writing Score Distribution")
+
+# Correlation matrix
+cor_matrix <- cor(students[, c("MathScore", "ReadingScore", "WritingScore")])
+print(cor_matrix)
+
+# K-Means Clustering
+
+# Determine optimal clusters using the Elbow Method
+set.seed(123)
+wss <- sapply(1:10, function(k) {kmeans(students[,6:8], centers=k, nstart=10)$tot.withinss})
+
+# Plot Elbow Method
+plot(1:10, wss, type="b", pch=19, frame=FALSE, xlab="Number of clusters", ylab="Total within-clusters sum of squares", main="Elbow Method")
+
+# Apply k-means clustering
+kmeans_result <- kmeans(students[,6:8], centers=3, nstart=10)
+students$Cluster <- as.factor(kmeans_result$cluster)
+
+# Visualize Clusters
+fviz_cluster(kmeans_result, data = students[,6:8], geom="point", ellipse.type="norm")
+
+# Hierarchical Clustering
+
+# Compute distance matrix
+dist_matrix <- dist(students[,6:8])
+
+# Perform hierarchical clustering using Ward's method
+hc <- hclust(dist_matrix, method="ward.D2")
+
+# Plot Dendrogram
+plot(hc, labels=FALSE, main="Hierarchical Clustering Dendrogram")
+rect.hclust(hc, k=3, border="red")  # Cut tree into 3 clusters
+
+# Statistical Analysis
+
+# ANOVA test
+anova_math <- aov(MathScore ~ ParentalEd, data=students)
+summary(anova_math)
+
+# T-test (Test preparation course effect on Math scores)
+t.test(MathScore ~ TestPrep, data=students)
+
+# Shapiro-Wilk normality test
+shapiro.test(students$MathScore)
+shapiro.test(students$ReadingScore)
+shapiro.test(students$WritingScore)
+
+# Regression Analysis
+# linear regression
+lm_model <- lm(MathScore ~ ParentalEd, data=students)
+summary(lm_model)
+
+# Plot Regression Line
+ggplot(students, aes(x=ParentalEd, y=MathScore)) +
+  geom_point(color="blue") +
+  geom_smooth(method="lm", se=FALSE, color="red") +
+  labs(title="Math Score vs. Parental Education", x="Parental Education Level", y="Math Score")
+
+# Multiple Linear Regression
+
+multi_lm <- lm(MathScore ~ ParentalEd + Lunch + TestPrep, data=students)
+summary(multi_lm)
+
+# Regression Tree
+
+reg_tree <- tree(MathScore ~ ParentalEd + Lunch + TestPrep, data=students)
+plot(reg_tree)
+text(reg_tree, pretty=0)
+
+# Residual Analysis
+
+# QQ Plot for Residuals
+qqnorm(residuals(multi_lm))
+qqline(residuals(multi_lm), col="red")
+
+# Residual Plot
+plot(fitted(multi_lm), residuals(multi_lm), main="Residuals vs Fitted", xlab="Fitted Values", ylab="Residuals", pch=20)
+abline(h=0, col="red")
+
+
+# Fitted Graph
+
+# Fitted graph for Multiple Regression Model
+ggplot(students, aes(x=fitted(multi_lm), y=MathScore)) +
+  geom_point() +
+  geom_abline(intercept=0, slope=1, col="red") +
+  labs(title="Actual vs Predicted Math Scores", x="Predicted Scores", y="Actual Scores")
+
+
+
+# Summary of Findings
+# Statistical Tests:
+
+# ANOVA showed significant differences in math scores based on parental education levels.
+T-test indicated that students who completed a test preparation course had significantly higher scores.
+Shapiro-Wilk test suggested that scores followed a near-normal distribution.
+Regression Analysis:
+
+Simple Linear Regression: Parental education positively influenced math scores (p < 0.01).
+Multiple Linear Regression: Parental education, lunch type, and test preparation course were strong predictors.
+Regression Tree: Clearly grouped students based on key socioeconomic factors.
+Clustering:
+
+K-Means and Hierarchical Clustering identified three student groups: high-achievers, moderate-performers, and low-achievers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
