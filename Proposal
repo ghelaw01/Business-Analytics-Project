@@ -14,6 +14,7 @@ This project focuses on the relationship between socioeconomic factors and stude
 ________________________________________
 2. Brief Description of the Data
 The study will utilize the "Students Performance in Exams" dataset, which is publicly available on Kaggle. This dataset contains 1,000 student records with the following key variables:
+Dataset url : "https://www.kaggle.com/datasets/spscientist/students-performance-in-exams"
 •	Numerical Variables
 o	Math Score (0–100)
 o	Reading Score (0–100)
